@@ -1,0 +1,30 @@
+@import "../styles/settings/globals";
+
+main {
+  height: 100vh;
+}
+
+.container-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    flex-basis: 100%;
+
+    @include breakpoint($smBreakpoint) {
+      flex-basis: 540px;
+    }
+
+    @include breakpoint($mdBreakpoint) {
+      flex-basis: 720px;
+    }
+
+    @include breakpoint($lgBreakpoint) {
+      flex-basis: 960px;
+    }
+
+    @include breakpoint($xlBreakpoint) {
+      flex-basis: 1140px;
+    }
+  }
+}

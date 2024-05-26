@@ -1,0 +1,33 @@
+@import "../../styles/settings/globals";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .inner-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint($mdBreakpoint) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .card {
+      background-color: green;
+      height: 136px;
+      margin-bottom: 24px;
+      width: 350px;
+
+      &:first-child {
+        // margin-bottom: 0;
+      }
+
+      @include breakpoint($mdBreakpoint) {
+        // margin-bottom: 0;
+      }
+    }
+  }
+}
