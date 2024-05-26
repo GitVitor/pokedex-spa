@@ -1,0 +1,61 @@
+@import "../../styles/settings/globals";
+
+header {
+  background-color: $tertiary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  flex-direction: row;
+  margin-bottom: 16px;
+  padding: 8px;
+  box-shadow: 0px -20px 20px 20px $dark-color;
+
+  @include breakpoint($smBreakpoint) {
+    padding: 16px 140px;
+    justify-content: space-between;
+  }
+
+  .logo-wrapper {
+    flex-basis: 158px;
+  }
+
+  .links-wrapper {
+    display: none;
+    @include breakpoint($smBreakpoint) {
+      display: flex;
+      flex-basis: 300px;
+      justify-content: space-between;
+    }
+
+    @include breakpoint($mdBreakpoint) {
+      flex-basis: 500px;
+    }
+
+    .link-wrapper {
+      margin-top: 20px;
+
+      &.active {
+        border-bottom: 2px;
+        border-color: $dark-color;
+        border-style: solid;
+        padding-bottom: 20px;
+      }
+    }
+
+    a {
+      color: $dark-color;
+      text-decoration: none;
+
+      &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+
+      &:hover:not(.disabled) {
+        font-weight: bold;
+      }
+    }
+  }
+}

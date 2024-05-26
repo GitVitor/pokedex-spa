@@ -1,0 +1,11 @@
+$xsBreakpoint: 576px;
+$smBreakpoint: 768px;
+$mdBreakpoint: 1024px;
+$lgBreakpoint: 1290px;
+$xlBreakpoint: 1440px;
+
+@mixin breakpoint($breakpoint) {
+  @media (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
