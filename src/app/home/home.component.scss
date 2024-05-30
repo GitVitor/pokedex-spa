@@ -1,0 +1,15 @@
+@import "../../styles/settings/globals";
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 32px;
+
+  @include breakpoint($mdBreakpoint) {
+    font-size: 32px;
+  }
+
+  @include breakpoint($lgBreakpoint) {
+    text-align: left;
+  }
+}

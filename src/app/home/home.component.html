@@ -1,0 +1,3 @@
+<h1>Choose your favorite pokemon</h1>
+<app-input-filter (searchValueChanged)="onFilterValueChange($event)" />
+<app-pokemon-list [isLoading]="isLoading" [PokemonList]="pokemonListData" />
