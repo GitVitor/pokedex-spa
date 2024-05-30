@@ -1,0 +1,22 @@
+@import "../../styles/settings/globals";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+
+  input {
+    height: 53px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 40px;
+    border-bottom-color: $gray-darker-color;
+    padding: 0 30px;
+    min-width: 240px;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
