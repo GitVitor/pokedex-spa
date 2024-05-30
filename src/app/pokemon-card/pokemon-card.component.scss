@@ -30,6 +30,10 @@
       font-weight: bold;
       text-align: center;
       text-transform: capitalize;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100px;
+      overflow: hidden;
     }
 
     .badge-wrapper {
@@ -135,5 +139,9 @@
     &.electric {
       background-color: #f7c545;
     }
+  }
+
+  .skeleton {
+    width: 100%;
   }
 }

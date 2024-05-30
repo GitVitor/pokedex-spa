@@ -11,4 +11,5 @@ import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
 })
 export class PokemonListComponent {
   @Input() PokemonList: PokemonBasicData[] = [];
+  @Input() isLoading: boolean = true;
 }

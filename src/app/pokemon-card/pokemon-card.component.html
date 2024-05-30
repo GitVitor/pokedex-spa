@@ -1,15 +1,20 @@
 <div [className]="(index + 1) % 3 === 2 ? 'card center-card' : 'card'">
+  @if(!isloading) {
   <div class="details">
-    <p class="pokemon-name" [textContent]="pokemonData.name"></p>
+    <p
+      class="pokemon-name"
+      [title]="pokemonData!.name"
+      [textContent]="pokemonData!.name"
+    ></p>
 
     <div
       [className]="
-        pokemonData.types.length === 1
+        pokemonData!.types.length === 1
           ? 'badge-wrapper center'
           : 'badge-wrapper'
       "
     >
-      @for (type of pokemonData.types; track type.type.name) {
+      @for (type of pokemonData!.types; track type.type.name) {
       <span
         class="badge"
         [class]="type.type.name"
@@ -20,14 +25,14 @@
     <div class="stats-outer-wrapper">
       <div class="stats-inner-wrapper">
         <div class="circle">
-          <span [textContent]="pokemonData.attack.base_stat"></span>
+          <span [textContent]="pokemonData!.attack.base_stat"></span>
         </div>
         <span>Attack</span>
       </div>
 
       <div class="stats-inner-wrapper">
         <div class="circle def">
-          <span [textContent]="pokemonData.defense.base_stat"></span>
+          <span [textContent]="pokemonData!.defense.base_stat"></span>
         </div>
         <span>Defense</span>
       </div>
@@ -36,7 +41,15 @@
   <div
     [class]="mainType"
     class="sprite"
-    [style]="'background-image: url(' + pokemonData.background + ')'"
+    [style]="'background-image: url(' + pokemonData!.background + ')'"
     alt=""
   ></div>
+  } @else {
+  <ngx-skeleton-loader
+    class="skeleton"
+    [theme]="{ height: '100%' }"
+    appearance="line"
+    count="1"
+  />
+  }
 </div>

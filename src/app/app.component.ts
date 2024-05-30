@@ -26,6 +26,7 @@ export class AppComponent {
   pokemonListData: PokemonBasicData[] = [];
   pokemonListFiltered: PokemonBasicData[] = [];
   filterTextChanged: Subject<string> = new Subject<string>();
+  isLoading = true;
 
   constructor() {
     const SECOND = 1000;
@@ -44,7 +45,12 @@ export class AppComponent {
   }
 
   private async fetchPokemonList(name?: string) {
-    const response = await this.pokedexService.getPokemonList(name);
-    this.pokemonListData = response.data;
+    try {
+      const response = await this.pokedexService.getPokemonList(name);
+      this.pokemonListData = response.data;
+    } catch (error) {
+    } finally {
+      this.isLoading = false;
+    }
   }
 }

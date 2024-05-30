@@ -1,12 +1,15 @@
 <main class="main">
   <div class="content">
-    <app-app-main-header/>
+    <app-app-main-header />
   </div>
   <div class="container-wrapper">
     <div class="container">
       <h1>Choose your favorite pokemon</h1>
       <app-input-filter (searchValueChanged)="onFilterValueChange($event)" />
-      <app-pokemon-list [PokemonList]="pokemonListData" />
+      <app-pokemon-list
+        [isLoading]="isLoading"
+        [PokemonList]="pokemonListData"
+      />
     </div>
   </div>
 </main>
