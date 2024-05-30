@@ -11,8 +11,16 @@ export class PokedexService {
     return `${environment.mainAPI}pokemon`;
   }
 
-  async getPokemonList(): Promise<PaginatedResponse<PokemonBasicData>> {
-    const data = await fetch(this.getURL());
+  async getPokemonList(
+    name?: string
+  ): Promise<PaginatedResponse<PokemonBasicData>> {
+    const url = new URL(this.getURL());
+
+    if (name && name.trim().length > 0) {
+      url.searchParams.set('name', name);
+    }
+
+    const data = await fetch(url.toString());
     return data.json();
   }
 }
