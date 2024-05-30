@@ -20,7 +20,7 @@ main {
     }
 
     @include breakpoint($lgBreakpoint) {
-      flex-basis: 960px;
+      flex-basis: 1140px;
     }
 
     @include breakpoint($xlBreakpoint) {
