@@ -1,5 +1,7 @@
 <div class="wrapper">
   <div class="inner-wrapper">
-    <app-pokemon-card />
+    @for (pokemon of PokemonList; track pokemon.name) {
+      <app-pokemon-card [pokemonData]="pokemon" />
+    }
   </div>
 </div>

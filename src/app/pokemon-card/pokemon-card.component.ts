@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PokemonBasicData } from '../pokemon-basic-data';
 
 @Component({
@@ -8,6 +8,10 @@ import { PokemonBasicData } from '../pokemon-basic-data';
   templateUrl: './pokemon-card.component.html',
   styleUrl: './pokemon-card.component.scss',
 })
-export class PokemonCardComponent {
+export class PokemonCardComponent implements OnInit {
   @Input() pokemonData!: PokemonBasicData;
+  mainType!: string;
+  ngOnInit(): void {
+    this.mainType = this.pokemonData.types[0].type.name;
+  }
 }
