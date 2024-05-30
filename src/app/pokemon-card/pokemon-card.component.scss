@@ -1,12 +1,20 @@
 @import "../../styles/settings/globals";
 
 .card {
+  box-shadow: 0px 4px 8px -4px black;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
   height: 136px;
   margin-bottom: 24px;
   width: 350px;
+
+  @include breakpoint($lgBreakpoint) {
+    &.center-card {
+      margin-right: 45px;
+      margin-left: 45px;
+    }
+  }
 
   .details {
     background-color: $white-color;

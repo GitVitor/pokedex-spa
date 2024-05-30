@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="inner-wrapper">
     @for (pokemon of PokemonList; track pokemon.name) {
-      <app-pokemon-card [pokemonData]="pokemon" />
+    <app-pokemon-card [pokemonData]="pokemon" [index]="$index" />
     }
   </div>
 </div>

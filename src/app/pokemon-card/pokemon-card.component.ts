@@ -10,6 +10,7 @@ import { PokemonBasicData } from '../pokemon-basic-data';
 })
 export class PokemonCardComponent implements OnInit {
   @Input() pokemonData!: PokemonBasicData;
+  @Input() index!: number;
   mainType!: string;
   ngOnInit(): void {
     this.mainType = this.pokemonData.types[0].type.name;
