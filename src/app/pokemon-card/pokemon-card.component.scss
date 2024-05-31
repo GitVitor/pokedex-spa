@@ -45,17 +45,6 @@
       &.center {
         justify-content: center;
       }
-
-      .badge {
-        border-radius: 8px;
-        box-shadow: inset 0px -2px 4px -3px black;
-        display: inline;
-        line-height: 10px;
-        font-size: 11px;
-        font-weight: 300;
-        padding: 3px 10px;
-        text-transform: capitalize;
-      }
     }
 
     .stats-outer-wrapper {
@@ -95,8 +84,7 @@
     // background-position-y: px;
   }
 
-  .sprite,
-  .badge {
+  .sprite {
     &.stile,
     &.dark,
     &.rock {

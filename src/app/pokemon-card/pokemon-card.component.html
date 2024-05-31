@@ -18,11 +18,7 @@
       "
     >
       @for (type of pokemonData!.types; track type.type.name) {
-      <span
-        class="badge"
-        [class]="type.type.name"
-        [textContent]="type.type.name"
-      ></span>
+      <app-ui-badge [class]="type.type.name" [text]="type.type.name" />
       }
     </div>
     <div class="stats-outer-wrapper">

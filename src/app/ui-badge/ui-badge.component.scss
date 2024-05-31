@@ -1,0 +1,53 @@
+.badge {
+  border-radius: 8px;
+  box-shadow: inset 0px -2px 4px -3px black;
+  display: inline;
+  line-height: 10px;
+  font-size: 11px;
+  font-weight: 300;
+  padding: 3px 10px;
+  text-transform: capitalize;
+
+  &.stile,
+  &.dark,
+  &.rock {
+    background-color: #a1a1a1;
+  }
+
+  &.grass,
+  &.bug {
+    background-color: #70a83b;
+  }
+
+  &.ice,
+  &.water,
+  &.flying {
+    background-color: #a2cff0;
+  }
+
+  &.fire,
+  &.fighting,
+  &.dragon {
+    background-color: #f76545;
+  }
+
+  &.normal,
+  &.ghost {
+    background-color: #76aadb;
+  }
+
+  &.poison,
+  &.psychic,
+  &.fairy,
+  &.ghost {
+    background-color: #a974bc;
+  }
+
+  &.ground {
+    background-color: #9b897b;
+  }
+
+  &.electric {
+    background-color: #f7c545;
+  }
+}
