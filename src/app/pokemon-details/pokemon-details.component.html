@@ -1,1 +1,33 @@
-<p>pokemon-details works!</p>
+<div class="pokemon-details-page-wrapper">
+  <div class="title-wrapper">
+    <ngx-skeleton-loader
+      class="skeleton"
+      [theme]="{ height: '64px' }"
+      appearance="line"
+      count="1"
+    />
+  </div>
+  <div class="pokemon-name-wrapper">
+    <ngx-skeleton-loader
+      class="skeleton"
+      [theme]="{ height: '36px' }"
+      appearance="line"
+    />
+  </div>
+  <div class="pokemon-details-wrapper">
+    <div class="image-outer-wrapper">
+      <div class="image-wrapper">
+        <ngx-skeleton-loader
+          class="skeleton"
+          [theme]="{ height: '100%' }"
+          appearance="line"
+          count="1"
+        />
+      </div>
+    </div>
+    <div class="description-wrapper">
+      <ngx-skeleton-loader class="skeleton" appearance="line" count="6" />
+    </div>
+  </div>
+  <div class="suggestions-wrapper"></div>
+</div>
