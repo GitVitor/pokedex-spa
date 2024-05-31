@@ -1,8 +1,23 @@
 <h1>Choose your favorite pokemon</h1>
 <app-input-filter (searchValueChanged)="onFilterValueChange($event)" />
 <app-pokemon-list [isLoading]="isLoading" [PokemonList]="pokemonListData" />
+
+@if(!isLoading && pokemonListData.length === 0) {
+<div class="not-found-outer-wrapper">
+  <div class="not-found-inner-wrapper">
+    <div class="image-wrapper">
+      <img src="mew.png" />
+    </div>
+    <h5>It seems that we couldn't find any pokemon by that name</h5>
+  </div>
+</div>
+
+}
+
 <div class="load-more-wrapper">
-  <app-ui-button [isLoading]="isLoading" [onClick]="onLoadMore"
+  @if(pokemonListData.length > 0) {
+  <app-ui-button [isLoading]="isLoading" (onClick)="onLoadMore()"
     >Load more</app-ui-button
   >
+  }
 </div>

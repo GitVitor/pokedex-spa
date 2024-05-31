@@ -1,5 +1,5 @@
 import { Component, output, inject } from '@angular/core';
-import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
+import { Subject, debounceTime, distinctUntilChanged, tap } from 'rxjs';
 
 import { PokedexService } from '../pokedex.service';
 import { PokemonBasicData } from '../pokemon-basic-data';
@@ -18,7 +18,6 @@ export class HomeComponent {
   filterValue = output<string>();
   pokedexService: PokedexService = inject(PokedexService);
   pokemonListData: PokemonBasicData[] = [];
-  pokemonListFiltered: PokemonBasicData[] = [];
   filterTextChanged: Subject<string> = new Subject<string>();
   isLoading = true;
   pokemonFetchData = this.getDefaultPokemonFetchData();
@@ -26,12 +25,19 @@ export class HomeComponent {
   constructor() {
     const SECOND = 1000;
 
-    this.fetchPokemonList();
+    this.fetchPokemonList(false);
 
     this.filterTextChanged
-      .pipe(debounceTime(SECOND), distinctUntilChanged())
+      .pipe(
+        tap(() => {
+          this.pokemonListData = [];
+          this.isLoading = true;
+        }),
+        debounceTime(SECOND),
+        distinctUntilChanged()
+      )
       .subscribe((filterQuery) => {
-        this.fetchPokemonList(filterQuery);
+        this.fetchPokemonList(false, filterQuery);
       });
   }
 
@@ -43,7 +49,7 @@ export class HomeComponent {
     this.pokemonFetchData.offset = this.pokemonFetchData.limit;
     this.pokemonFetchData.limit += 9;
 
-    await this.fetchPokemonList();
+    await this.fetchPokemonList(true);
   }
 
   getDefaultPokemonFetchData() {
@@ -53,15 +59,18 @@ export class HomeComponent {
     };
   }
 
-  private async fetchPokemonList(name?: string) {
+  private async fetchPokemonList(incremental: boolean, name?: string) {
     try {
+      this.isLoading = true;
       const response = await this.pokedexService.getPokemonList(
         name,
         this.pokemonFetchData.offset,
         this.pokemonFetchData.limit
       );
 
-      this.pokemonListData = response.data;
+      this.pokemonListData = incremental
+        ? [...this.pokemonListData, ...response.data]
+        : response.data;
     } catch (error) {
     } finally {
       this.isLoading = false;

@@ -18,3 +18,34 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.not-found-outer-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  width: 100%;
+  h5 {
+    margin-top: 30px;
+    text-align: center;
+    color: $dark-color;
+  }
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 300px;
+      margin-bottom: 16px;
+      animation: moveUpDown 1s infinite alternate;
+    }
+
+    @keyframes moveUpDown {
+      0% {
+        transform: translate(0, 0%);
+      }
+      100% {
+        transform: translate(0, -5%);
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 <div class="wrapper">
   <div class="inner-wrapper">
-    @if (!isLoading) { @for (pokemon of PokemonList; track pokemon.name) {
+    @if (!isLoading || PokemonList.length > 0) { @for (pokemon of PokemonList;
+    track pokemon.name) {
     <app-pokemon-card [pokemonData]="pokemon" [index]="$index" />
     } } @if (isLoading) { @for (n of [0, 1, 2, 3, 4, 5, 6, 7]; track n) {
     <app-pokemon-card [isloading]="isLoading" [index]="n" />
