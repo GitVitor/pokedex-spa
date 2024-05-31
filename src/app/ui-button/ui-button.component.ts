@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ui-button',
@@ -8,6 +8,10 @@ import { Component, Input } from '@angular/core';
   styleUrl: './ui-button.component.scss',
 })
 export class UiButtonComponent {
-  @Input() onClick!: () => void;
+  @Output() onClick = new EventEmitter<void>();
   @Input() isLoading!: boolean;
+
+  handleOnClick() {
+    this.onClick.emit();
+  }
 }
