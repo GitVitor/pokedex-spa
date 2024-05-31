@@ -28,3 +28,10 @@ main {
     }
   }
 }
+
+.blank-footer {
+  height: 75px;
+  @include breakpoint($mdBreakpoint) {
+    height: 150px;
+  }
+}
