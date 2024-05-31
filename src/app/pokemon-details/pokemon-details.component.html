@@ -13,7 +13,32 @@
       </div>
     </div>
     <div class="description-wrapper">
+      <div class="badge-wrapper">
+        @for (type of pokemonData!.types; track type.type.name) {
+        <app-ui-badge [class]="type.type.name" [text]="type.type.name" />
+        }
+      </div>
       <p [textContent]="pokemonData?.pokedexEntryDescription"></p>
+      <div class="stats-row-wrapper">
+        <div class="stats-inner-wrapper">
+          <p>Attack</p>
+          {{ pokemonData?.attack?.base_stat }}
+        </div>
+        <div class="stats-inner-wrapper">
+          <p>Defense</p>
+          {{ pokemonData?.defense?.base_stat }}
+        </div>
+      </div>
+      <div class="stats-row-wrapper">
+        <div class="stats-inner-wrapper">
+          <p>Special Attack</p>
+          {{ pokemonData?.specialAttack?.base_stat }}
+        </div>
+        <div class="stats-inner-wrapper">
+          <p>Special Defense</p>
+          {{ pokemonData?.specialDefense?.base_stat }}
+        </div>
+      </div>
     </div>
   </div>
   <div class="suggestions-wrapper"></div>

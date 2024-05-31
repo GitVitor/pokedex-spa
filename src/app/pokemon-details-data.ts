@@ -5,6 +5,8 @@ export interface PokemonDetailsData {
   name: string;
   attack: PokemonStat;
   defense: PokemonStat;
+  specialDefense: PokemonStat;
+  specialAttack: PokemonStat;
   types: PokemonType[];
   background: string;
   pokedexEntryDescription: string;

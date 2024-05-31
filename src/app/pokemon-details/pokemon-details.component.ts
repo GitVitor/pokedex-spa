@@ -4,11 +4,12 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { map } from 'rxjs';
 import { PokedexService } from '../pokedex.service';
 import { PokemonDetailsData } from '../pokemon-details-data';
+import { UiBadgeComponent } from '../ui-badge/ui-badge.component';
 
 @Component({
   selector: 'app-pokemon-details',
   standalone: true,
-  imports: [NgxSkeletonLoaderModule, RouterModule],
+  imports: [NgxSkeletonLoaderModule, RouterModule, UiBadgeComponent],
   templateUrl: './pokemon-details.component.html',
   styleUrl: './pokemon-details.component.scss',
 })
