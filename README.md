@@ -1,7 +1,7 @@
 # PokedexSpa
 
 The PokedexSpa is an Single Page Application written in Javascript using Angular.
-It presents a list of Pokemons which you can filter by name and type, and then 
+It is a fully responsive application that presents a list of Pokemons which you can filter by name, and then 
 check details about your Pokemon by clicking on them.
 
 
