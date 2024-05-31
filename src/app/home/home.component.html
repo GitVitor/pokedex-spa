@@ -1,3 +1,8 @@
 <h1>Choose your favorite pokemon</h1>
 <app-input-filter (searchValueChanged)="onFilterValueChange($event)" />
 <app-pokemon-list [isLoading]="isLoading" [PokemonList]="pokemonListData" />
+<div class="load-more-wrapper">
+  <app-ui-button [isLoading]="isLoading" [onClick]="onLoadMore"
+    >Load more</app-ui-button
+  >
+</div>

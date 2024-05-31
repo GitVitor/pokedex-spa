@@ -12,13 +12,18 @@ export class PokedexService {
   }
 
   async getPokemonList(
-    name?: string
+    name?: string,
+    offset = 0,
+    limit = 10
   ): Promise<PaginatedResponse<PokemonBasicData>> {
     const url = new URL(this.getURL());
 
     if (name && name.trim().length > 0) {
       url.searchParams.set('name', name);
     }
+
+    url.searchParams.set('offset', offset.toString());
+    url.searchParams.set('limit', limit.toString());
 
     const data = await fetch(url.toString());
     return data.json();
