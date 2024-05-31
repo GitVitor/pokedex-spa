@@ -32,8 +32,11 @@ header {
       flex-basis: 500px;
     }
 
-    .link-wrapper {
+    a {
       margin-top: 20px;
+      color: $dark-color;
+      text-decoration: none;
+      cursor: pointer;
 
       &.active {
         border-bottom: 2px;
@@ -41,11 +44,6 @@ header {
         border-style: solid;
         padding-bottom: 20px;
       }
-    }
-
-    a {
-      color: $dark-color;
-      text-decoration: none;
 
       &.disabled {
         pointer-events: none;
