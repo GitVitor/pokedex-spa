@@ -14,6 +14,10 @@
     margin-bottom: 24px;
   }
 
+  .pokemon-name-wrapper {
+    text-transform: capitalize;
+  }
+
   .pokemon-details-wrapper {
     display: flex;
     flex-direction: column;
@@ -28,13 +32,16 @@
       justify-content: center;
 
       .image-wrapper {
-        height: 420px;
+        // height: 420px;
         flex-basis: 100%;
         margin-bottom: 24px;
         max-width: 330px;
 
+        img {
+          height: 290px;
+        }
+
         @include breakpoint($mdBreakpoint) {
-          height: 420px;
           flex-basis: 100%;
         }
       }

@@ -1,3 +1,24 @@
+@if (!isLoading) {
+<div class="pokemon-details-page-wrapper">
+  <div class="title-wrapper">
+    <h2>Pokemon</h2>
+  </div>
+  <div class="pokemon-name-wrapper">
+    <h3 [textContent]="pokemonData?.name"></h3>
+  </div>
+  <div class="pokemon-details-wrapper">
+    <div class="image-outer-wrapper">
+      <div class="image-wrapper">
+        <img [src]="pokemonData?.background" />
+      </div>
+    </div>
+    <div class="description-wrapper">
+      <p [textContent]="pokemonData?.pokedexEntryDescription"></p>
+    </div>
+  </div>
+  <div class="suggestions-wrapper"></div>
+</div>
+} @if(isLoading) {
 <div class="pokemon-details-page-wrapper">
   <div class="title-wrapper">
     <ngx-skeleton-loader
@@ -31,3 +52,4 @@
   </div>
   <div class="suggestions-wrapper"></div>
 </div>
+}
