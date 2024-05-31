@@ -1,2 +1,8 @@
+@use "@material/button/styles";
 @import "./breakpoints";
 @import "./colors";
+
+.mdc-button--raised {
+  --mdc-theme-primary: #73d677;
+  --mdc-theme-on-primary: #212121;
+}

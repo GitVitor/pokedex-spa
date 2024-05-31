@@ -1,0 +1,12 @@
+<div class="mdc-touch-target-wrapper">
+  <button
+    class="mdc-button mdc-button--raised"
+    [disabled]="isLoading"
+    (click)="onClick()"
+  >
+    <span class="mdc-button__ripple"></span>
+    <span class="mdc-button__touch"></span>
+    <span class="mdc-button__focus-ring"></span>
+    <span class="mdc-button__label"><ng-content></ng-content></span>
+  </button>
+</div>
