@@ -32,6 +32,7 @@ export class HomeComponent {
         tap(() => {
           this.pokemonListData = [];
           this.isLoading = true;
+          this.pokemonFetchData = this.getDefaultPokemonFetchData();
         }),
         debounceTime(SECOND),
         distinctUntilChanged()
